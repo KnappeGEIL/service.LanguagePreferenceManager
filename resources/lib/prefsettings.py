@@ -48,18 +48,19 @@ class settings():
                  'audio on: {1}\n' \
                  'subs on: {2}\n' \
                  'cond subs on: {3}\n' \
-                 'turn subs on: {4}, turn subs off: {5}\n' \
-                 'use file name: {6}, file name regex: {7}\n' \
-                 'at least one pref on: {8}\n'\
-                 'audio prefs: {9}\n' \
-                 'sub prefs: {10}\n' \
-                 'cond sub prefs: {11}\n' \
-                 'custom audio prefs: {12}\n' \
-                 'custom subs prefs: {13}\n'
-                 'custom cond subs prefs: {14}\n'
+                 'blacklisted keywords: {4}\n' \
+                 'turn subs on: {5}, turn subs off: {6}\n' \
+                 'use file name: {7}, file name regex: {8}\n' \
+                 'at least one pref on: {9}\n'\
+                 'audio prefs: {10}\n' \
+                 'sub prefs: {11}\n' \
+                 'cond sub prefs: {12}\n' \
+                 'custom audio prefs: {13}\n' \
+                 'custom subs prefs: {14}\n'
+                 'custom cond subs prefs: {15}\n'
                  '##### LPM Settings #####\n'
                  .format(self.delay, self.audio_prefs_on, self.sub_prefs_on,
-                         self.condsub_prefs_on, self.turn_subs_on, self.turn_subs_off,
+                         self.condsub_prefs_on, ','.join(self.keyword_blacklist), self.turn_subs_on, self.turn_subs_off,
                          self.useFilename, self.filenameRegex, self.at_least_one_pref_on,
                          self.AudioPrefs, self.SubtitlePrefs, self.CondSubtitlePrefs,
                          self.custom_audio, self.custom_subs, self.custom_condsub)
@@ -77,6 +78,12 @@ class settings():
       self.turn_subs_off = addon.getSetting('turnSubsOff') == 'true'
       self.useFilename = addon.getSetting('useFilename') == 'true'
       self.filenameRegex = addon.getSetting('filenameRegex')
+      self.keyword_blacklist_enabled = addon.getSetting('enableKeywordBlacklist') == 'true'
+      self.keyword_blacklist = addon.getSetting('KeywordBlacklist')
+      if self.keyword_blacklist and self.keyword_blacklist_enabled:
+          self.keyword_blacklist = self.keyword_blacklist.lower().split(',')
+      else:
+          self.keyword_blacklist = []
       if self.useFilename:
           self.reg = re.compile(self.filenameRegex, re.IGNORECASE)
           self.split = re.compile(r'[_|.|-]*', re.IGNORECASE)

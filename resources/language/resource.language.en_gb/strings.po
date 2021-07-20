@@ -108,6 +108,18 @@ msgctxt "#30122"
 msgid "General"
 msgstr ""
 
+msgctxt "#30125"
+msgid "Enable Keyword Blacklist"
+msgstr ""
+
+msgctxt "#30126"
+msgid "Enter a comma-seperated list of keywords to blacklist in subtitle names"
+msgstr ""
+
+msgctxt "#30127"
+msgid "Keyword List:"
+msgstr ""
+
 msgctxt "#30201"
 msgid "Albanian"
 msgstr ""

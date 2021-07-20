@@ -36,6 +36,9 @@
     <string id="30122">Secondary subtitle is Forced type</string>
     <string id="30123">Third subtitle is Forced type</string>
     <string id="30124">and with Forced type</string>
+    <string id="30125">Enable Keyword Blacklist</string>
+    <string id="30126">Enter a comma-seperated list of keywords to blacklist in subtitle names</string>
+    <string id="30127">Keyword List:</string>
 	
 	        
   <!-- Languages  -->

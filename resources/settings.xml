@@ -452,7 +452,7 @@
 				</setting>
 			</group>
 		</category>
-		<category id= "Conditional Subtitle Preferences" label="30106">
+		<category id="Conditional Subtitle Preferences" label="30106">
 			<group id="1">
 				<setting id="enableCondSub" label="30107" type="boolean">
 					<default>false</default>
@@ -460,6 +460,37 @@
 				</setting>
 			</group>
 			<group id="2">
+				<setting id="enableKeywordBlacklist" label="30125" type="boolean">
+					<default>false</default>
+					<control type="toggle" />
+				</setting>
+				<setting label="30126" type="string" id="KeywordBlacklistLabel">
+					<default></default>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="edit" format="string">
+						<heading>30126</heading>
+					</control>
+					<enable>false</enable>
+					<dependencies>
+						<dependency type="visible" setting="enableKeywordBlacklist" operator="is">true</dependency>
+					</dependencies>
+				</setting>
+				<setting label="30127" type="string" id="KeywordBlacklist">
+					<default></default>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="edit" format="string">
+						<heading>30127</heading>
+					</control>
+					<dependencies>
+						<dependency type="visible" setting="enableKeywordBlacklist" operator="is">true</dependency>
+					</dependencies>
+				</setting>
+			</group>
+			<group id="3">
 				<setting id="CondAudioLang01" type="integer" label="30110">
 					<default>46</default>
 					<constraints>
@@ -577,7 +608,7 @@
 					<control type="toggle"/>
 				</setting>
 			</group>
-			<group id="3">
+			<group id="4">
 				<setting id="CondAudioLang02" type="integer" label="30110">
 					<default>46</default>
 					<constraints>
@@ -695,7 +726,7 @@
 					<control type="toggle"/>
 				</setting>
 			</group>
-			<group id="4">
+			<group id="5">
 				<setting id="CondAudioLang03" type="integer" label="30110">
 					<default>46</default>
 					<constraints>
@@ -813,7 +844,7 @@
 					<control type="toggle"/>
 				</setting>
 			</group>
-			<group id="5">
+			<group id="6">
 				<setting label="30121" type="string" id="CustomCondSub">
 					<default></default>
 					<constraints>

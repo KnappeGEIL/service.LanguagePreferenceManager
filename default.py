@@ -240,6 +240,7 @@ class LangPrefMan_Player(xbmc.Player) :
 
     def evalCondSubPrefs(self, condsub_prefs):
         log(LOG_DEBUG, 'Evaluating conditional subtitle preferences' )
+        log(LOG_DEBUG, 'Subtitle names containing the following keywords are blacklisted: {0}'.format(','.join(settings.keyword_blacklist)))
         # if the audio track has been changed wait some time
         if (self.audio_changed and settings.delay > 0):
             log(LOG_DEBUG, "Delaying preferences evaluation by {0} ms".format(4*settings.delay))
@@ -269,7 +270,7 @@ class LangPrefMan_Player(xbmc.Player) :
                             return -1
                         else:
                             for sub in self.subtitles:
-                                if ((sub_code == sub['language']) or (sub_name == sub['language'])):
+                                if ((sub_code == sub['language']) or (sub_name == sub['language'])) and all(keyword not in sub['name'].lower() for keyword in settings.keyword_blacklist):
                                     if (self.testForcedFlag(forced, sub['name'])):
                                         log(LOG_INFO, 'Language of subtitle {0} matches conditional preference {1} ({2}:{3}) forced {4}'.format(sub['index'], i, audio_name, sub_name, forced) )
                                         return sub['index']
