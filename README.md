@@ -17,7 +17,7 @@ It's now possible to configure a comma-seperated keyword list as a blacklist for
 
 # Installation
 
-* Download the latest release
+* Download the latest [release](https://github.com/KnappeGEIL/service.LanguagePreferenceManager/releases/latest)
 * Install addon as zip in Kodi
 
 
