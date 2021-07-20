@@ -23,8 +23,8 @@ It's now possible to configure a comma-seperated keyword list as a blacklist for
 
 # Special Thanks
 
-* @ace20022 and @scott967 for initial development
+* [@ace20022](https://github.com/ace20022) and [@scott967](https://github.com/scott967) for initial development
 
-* @cyberden for making this addon ready for Kodi Matrix
+* [@cyberden](https://github.com/cyberden) for making this addon ready for Kodi Matrix
 
-* @fpatrick for fixing an issue with language mapping
+* [@fpatrick](https://github.com/fpatrick) for fixing an issue with language mapping
