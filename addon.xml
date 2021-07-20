@@ -15,12 +15,11 @@
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Language Preference Manager</summary>
 		<description lang="en_GB">Sets the audio and subtitle track according to your language preferences</description>
-		<disclaimer lang="en_GB">For bugs, requests or general questions visit the Language Preference Manager thread on the Kodi forum.</disclaimer>
+		<disclaimer lang="en_GB">For bugs, requests or general questions open an issue on the github repository.</disclaimer>
 		<platform>all</platform>
 		<news>Added keyword blacklist for conditional subtitles</news>
 		<assets>
 			<icon>resources/icon.png</icon>
 		</assets>
 	</extension>
-
 </addon>
